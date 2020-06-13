@@ -1,0 +1,101 @@
+
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">ABCD2</div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="ABCD2" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+    <form name="ABCD2Form">
+      <div class="list-block"> 
+      <div class="content-block-title">Age</div>        
+        <ul>       
+          <li class="item-content">
+            <div class="item-input">
+            <select name="ABCD2age" onchange="calABCD2();">
+              <option selected>< 60 Years</option>
+              <option>&ge; 60 Years</option>
+            </select>
+            </div>
+          </li>
+        </ul>
+      <div class="content-block-title">BP at initial evaluation</div>
+        <ul>
+          <li class="item-content">
+            <div class="item-input">
+            <select name="ABCD2BP" onchange="calABCD2();">
+              <option selected>sBP < 140 AND dBP < 90</option>
+              <option>sBP &ge; 140 OR dBP &ge; 90 </option>
+            </select>
+            </div>
+          </li>
+        </ul>
+      <div class="content-block-title">Clinical Features</div>
+        <ul>
+          <li class="item-content">
+            <div class="item-input">
+            <select name="ABCD2clinical" onchange="calABCD2();">
+              <option selected>Neither</option>
+              <option>Speech Impairment</option>
+              <option>Unilateral Weakness</option>
+            </select>
+            </div>
+          </li>
+        </ul>
+      <div class="content-block-title">Duration of Symptoms</div>
+        <ul>
+          <li class="item-content">
+            <div class="item-input">
+            <select name="ABCD2duration" onchange="calABCD2();">
+              <option selected>< 10 minutes</option>
+              <option>10-59 minutes</option>
+              <option>&ge; 60 minutes</option>
+            </select>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </form>
+      <div class="content-block-title">Results</div>
+      <div class="list-block"> 
+        <ul>       
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">ABCD<sup>2</sup> Score: </div><div class="item-after" style="color:#000"><span id="ABCD2Score">0</span></div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">Risk Category: </div><div class="item-after" style="color:#000"><span id="ABCD2Risk">Low</span></div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">2-day stroke risk: </div><div class="item-after" style="color:#000"><span id="ABCD22"></span></div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">7-day stroke risk: </div><div class="item-after" style="color:#000"><span id="ABCD27"></span></div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">90-day stroke risk: </div><div class="item-after" style="color:#000"><span id="ABCD290"></span></div>
+            </div>
+          </li>
+        </ul>
+        <div class="list-block-label">Ref ABCD2</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>StrokeMD</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="list-block">
+        <div class="content-block-title">Quick Access</div>
+          <ul>
+            <li>
+              <a href="#" class="item-link item-content close-panel back" onclick="mySearchbar.disable();">
+              <div class="item-media"><i class="icon icon-form-settings"></i></div>
+                <div class="item-inner">
+                  <div class="item-title">All Topics</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-link item-content close-panel back" onclick="mySearchbar.search('todo');">
+                <div class="item-media" style="width: 29px;"></div>
+                <div class="item-inner">
+                  <div class="item-title">Ischemic Stroke</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-link item-content close-panel back" onclick="mySearchbar.search('todo');">
+                <div class="item-media" style="width: 29px;"></div>
+                <div class="item-inner">
+                  <div class="item-title">Hemorrhagic Stroke</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-link item-content close-panel back" onclick="mySearchbar.search('todo');">
+                <div class="item-media" style="width: 29px;"></div>
+                <div class="item-inner">
+                  <div class="item-title">Neuro Scales & Labs</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-content close-panel open-popup" data-popup=".popup-disclaimer">
+              <div class="item-media" style="width: 29px;"></div>
+                <div class="item-inner">
+                  <div class="item-title">Disclaimer</div>
+                  <div class="item-after"><span class="badge">!</span></div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="item-content close-panel open-popup" data-popup=".popup-about">
+              <div class="item-media" style="width: 29px;"></div>
+                <div class="item-inner">
+                  <div class="item-title">About the Author</div>
+                  <div class="item-after"><span class="badge">?</span></div>
+                </div>
+              </a>
+            </li>
+          </ul>
+    	</div>
+    </div>
+    <div class="popup popup-disclaimer">
+      <div class="content-block">
+          <p>BY CONTINUING TO VIEW ANY PAGE WITHIN THIS APPLICATION, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTAND, AND AGREE TO BE BOUND BY THE TERMS AND CONDITIONS LISTED BELOW:</p>
+          <p> 
+The information in this application is provided as is and is not peer-reviewed, and the author does not warrant that it is complete, accurate or up to date. 
+The information provided is intended as a supplement to, not a substitute for, the expertise and judgment of a qualified healthcare professional.
+The information is not intended to cover all possible uses, directions, precautions, or permutations of what may or may not occur in actual clinical care or treatment.
+THE AUTHOR OF THIS APPLICATION SHALL NOT BE LIABLE TO THE USER OR ANYONE ELSE UNDER ANY CLAIM, DEMAND OR ACTION ARISING OUT OF OR RELATING TO USER'S USE OF THIS APPLICATION, NOR FOR ANY INACCURACY, ERROR OR OMISSION IN THIS APPLICATION, NOR FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, INCLUDING, WITHOUT LIMITATION, DAMAGES DUE TO LOST PROFITS OR OTHER DAMAGES, EVEN IF THE AUTHOR OF THIS APPLICATION HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH LOSS OR DAMAGES AND WHETHER OR NOT SUCH LOSS OR DAMAGES IS/ARE FORESEEABLE AND NOTWITHSTANDING THE FAILURE OF ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.
+This application may not be modified, redistributed, or included within other software or applications without the written consent of the author of this application.
+This application should not be used for any commercial purposes and should never be sold for any monetary value.
+          </p>
+          <p> <a href="#" class="close-popup">I have read the disclaimer above!</a></p>
+      </div>
+    </div>
+    <div class="popup popup-about">
+      <div class="content-block">
+        <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <p> <a href="#" class="close-popup">Close</a></p>
+          <p>I am a US board-certified neurologist with fellowship training in the Calgary Stroke Program in Canada.
+		I wrote this simple web app during my spare time within several weeks after fellowship.<br />
+		My last medical informatics project dated back 10+ years ago! 
+		I am familiar with client-side java / VB scripts, and server-side ASP / PHP / PERL.<br />
+		It is still under development but I hope you find this app useful so far. User interface was re-built using the open-source framework7 UI.<br />
+		    <br clear="all" />
+        <p>Dion Fung MD</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We have home navbar without left link-->
+            <div class="center sliding">StrokeMD</div>
+            <div class="right">
+              <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <!-- Search Bar -->
+            <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+              <div class="searchbar-input">
+                <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+              </div><a href="#" class="searchbar-cancel">Cancel</a>
+            </form>
+            <!-- Search Bar overlay -->
+            <div class="searchbar-overlay"></div>
+            <div class="page-content">
+            <!-- This block will be displayed if nothing found -->
+              <div class="content-block searchbar-not-found">
+                <div class="content-block-inner">Nothing found</div>
+              </div>
+            <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+              <div class="list-block list-block-search searchbar-found">
+              <div class="content-block-title">BETA</div>
+                <ul>
+                  <li>
+                      <a href="NIHSS.html" class="item-link item-content">
+                        <div class="item-inner">
+                          <div class="item-title">NIH Stroke Scale</div>
+                        </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="phenytoin.html" class="item-link item-content">
+                        <div class="item-inner">                        
+                          <div class="item-title">Phenytoin Correction</div>
+                        </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="MRIblood.html" class="item-link item-content">
+                        <div class="item-inner">                        
+                          <div class="item-title">Blood in MRI</div>
+                        </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="ABCD2.html" class="item-link item-content">
+                        <div class="item-inner">                        
+                          <div class="item-title">ABCD<sup>2</sup> Score</div>
+                        </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="tPA.html" class="item-link item-content">
+                        <div class="item-inner">                        
+                          <div class="item-title">tPA Calculation</div>
+                        </div>
+                      </a>
+                  </li>
+                </ul>
+              <div class="content-block-title">In the works...</div>
+                <ul>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">CHA2DS2-VASc<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">ICH score with ABC/2 volume<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">HAS Bled<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Glasgow Coma Scale<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">FOUR Score<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">FUNC score<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">CT ASPECTS<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Carotid Doppler Velocities<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                  <li class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title">Modified Rankin Scale<p hidden>Todo</p></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

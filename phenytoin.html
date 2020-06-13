@@ -1,0 +1,63 @@
+
+<!-- We don't need full layout here, because this page will be parsed with Ajax-->
+<!-- Top Navbar-->
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a></div>
+    <div class="center sliding">Phenytoin</div>
+    <div class="right">
+      <!-- Right link contains only icon - additional "icon-only" class--><a href="#" class="link icon-only open-panel"> <i class="icon icon-bars"></i></a>
+    </div>
+  </div>
+</div>
+<div class="pages">
+  <!-- Page, data-page contains page name-->
+  <div data-page="Phenytoin" class="page">
+    <!-- Scrollable page content-->
+    <div class="page-content">
+    <form name="PHTForm">
+      <div class="content-block-title">Options</div>
+      <div class="list-block"> 
+        <ul>       
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">SI Unit?</div>
+              <div class="item-after">
+                <label class="label-switch"><input type="checkbox" name="SI" onchange="chgUnit();"><div class="checkbox"></div></label>
+              </div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">Renal CrCl < 20 ml/min?</div>
+              <div class="item-after">
+                <label class="label-switch"><input type="checkbox" name="crcl" onchange="calPHT();"><div class="checkbox"></div></label>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="content-block-title">Calculation</div>
+      <div class="list-block"> 
+        <ul>       
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">Measured phenytoin (<span id="phtunit">mg/L</span>): <input name="pht" placeholder="Enter" type="number" value="" oninput="calPHT();"></div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">Serum albumin (<span id="albunit">g/dL</span>): <input name="alb" placeholder="Enter" type="number" value="" oninput="calPHT();"></div>
+            </div>
+          </li>
+          <li class="item-content">
+            <div class="item-inner">
+              <div class="item-title">Corrected phenytoin (<span id="cphtunit">mg/L</span>): <input name="corrpht" placeholder="Result" type="number" value=""></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
